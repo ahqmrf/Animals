@@ -1,10 +1,10 @@
 package tech.tolife.apps.animals.di
 
 import dagger.Component
-import tech.tolife.apps.animals.model.AnimalApiService
+import tech.tolife.apps.animals.model.AnimalRepository
 
 @Component(modules = [RepositoryModule::class])
 interface ApiComponent {
 
-    fun inject(service: AnimalApiService)
+    fun inject(repository: AnimalRepository)
 }

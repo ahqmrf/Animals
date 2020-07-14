@@ -10,7 +10,7 @@ class AnimalRepository {
     lateinit var apiService: AnimalApiService
 
     init {
-        DaggerApiComponent.create().inject(apiService)
+        DaggerApiComponent.create().inject(this)
     }
 
     fun getApiKey(): Single<ApiKey> {
