@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/animals_nav"
+    android:label="Animals"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="tech.tolife.apps.animals.view.ListFragment"
+        android:label="Animals"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/actionDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="tech.tolife.apps.animals.view.DetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/actionList"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="animal"
+            app:argType="tech.tolife.apps.animals.model.Animal" />
+    </fragment>
+</navigation>
